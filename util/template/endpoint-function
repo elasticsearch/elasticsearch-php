@@ -3,6 +3,7 @@
     {
 :extract
         $endpointBuilder = $this->endpoints;
+        /** @var \Elasticsearch\Endpoints\:EndpointClass $endpoint */
         $endpoint = $endpointBuilder(':EndpointClass');
         $endpoint->setParams($params);
 :setparam

@@ -201,7 +201,7 @@ class Connection implements ConnectionInterface
      * @param  Transport $transport
      * @return mixed
      */
-    public function performRequest(string $method, string $uri, ?array $params = [], $body = null, array $options = [], Transport $transport = null)
+    public function performRequest(string $method, string $uri, ?array $params = [], $body = null, array $options = [], ?Transport $transport = null)
     {
         if ($body !== null) {
             $body = $this->serializer->serialize($body);
@@ -255,7 +255,7 @@ class Connection implements ConnectionInterface
 
     private function wrapHandler(callable $handler): callable
     {
-        return function (array $request, Connection $connection, Transport $transport = null, $options) use ($handler) {
+        return function (array $request, Connection $connection, ?Transport $transport = null, array $options = []) use ($handler) {
 
             $this->lastRequest = [];
             $this->lastRequest['request'] = $request;

@@ -394,7 +394,7 @@ class ClientBuilder
      * @param null|string $password
      * @return $this
      */
-    public function setSSLCert(string $cert, string $password = null): ClientBuilder
+    public function setSSLCert(string $cert, ?string $password = null): ClientBuilder
     {
         $this->sslCert = [$cert, $password];
 
@@ -406,7 +406,7 @@ class ClientBuilder
      * @param null|string $password
      * @return $this
      */
-    public function setSSLKey(string $key, string $password = null): ClientBuilder
+    public function setSSLKey(string $key, ?string $password = null): ClientBuilder
     {
         $this->sslKey = [$key, $password];
 
